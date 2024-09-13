@@ -6,6 +6,7 @@ namespace SpriteKind {
     export const Wolken = SpriteKind.create()
     export const Farmen = SpriteKind.create()
     export const Feind = SpriteKind.create()
+    export const Affe = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const Wood = StatusBarKind.create()
@@ -28,8 +29,7 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Farmen, function (sprite, otherSp
     if (true) {
         Affe.setPosition(600, 5)
     } else {
-        let myEnemy: Sprite = null
-        myEnemy.follow(Farm, 15)
+        Affe.follow(Farm, 15)
     }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -244,7 +244,7 @@ Affe = sprites.create(img`
     . . . f d b f d b f f e f . . . 
     . . . f d d c d d b b d f . . . 
     . . . . f f f f f f f f f . . . 
-    `, SpriteKind.Enemy)
+    `, SpriteKind.Affe)
 Kiste = sprites.create(img`
     . . b b b b b b b b b b b b . . 
     . b e 4 4 4 4 4 4 4 4 4 4 e b . 
@@ -263,6 +263,7 @@ Kiste = sprites.create(img`
     b b b b b b b b b b b b b b b b 
     . b b . . . . . . . . . . b b . 
     `, SpriteKind.Kisten)
+Affe.setBounceOnWall(false)
 tiles.placeOnRandomTile(Kiste, sprites.builtin.forestTiles10)
 Affe.setPosition(600, 5)
 Affe.setVelocity(5, 5)
