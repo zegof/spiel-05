@@ -6,6 +6,7 @@ namespace SpriteKind {
     export const Wolken = SpriteKind.create()
     export const Farmen = SpriteKind.create()
     export const Feind = SpriteKind.create()
+    export const Affe = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const Wood = StatusBarKind.create()
@@ -26,17 +27,16 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Farmen, function (sprite, otherSprite) {
     foodScore += -10
     if (true) {
-        Affe.setPosition(600, 5)
+        Affe2.setPosition(600, 120)
     } else {
-        let myEnemy: Sprite = null
-        myEnemy.follow(Farm, 15)
+        Affe2.follow(Farm, 15)
     }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (player1.tileKindAt(TileDirection.Center, sprites.builtin.forestTiles0)) {
         n = 0
-        for (let value of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
-            if (player1.overlapsWith(value)) {
+        for (let value2 of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
+            if (player1.overlapsWith(value2)) {
                 n += 1
             }
         }
@@ -106,8 +106,8 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     }
     if (player1.tileKindAt(TileDirection.Center, sprites.castle.tileGrass3)) {
         n = 0
-        for (let value of sprites.allOfKind(SpriteKind.Farmen)) {
-            if (player1.overlapsWith(value)) {
+        for (let value3 of sprites.allOfKind(SpriteKind.Farmen)) {
+            if (player1.overlapsWith(value3)) {
                 n += 1
             }
         }
@@ -135,7 +135,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
                         `, SpriteKind.Farmen)
                     scaling.scaleToPercent(Farm, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
                     Farm.setPosition(player1.x, player1.y)
-                    Affe.follow(Farm, 70)
+                    Affe2.follow(Farm, 70)
                 } else {
                     game.showLongText("Farm erfordert 60 Holz.", DialogLayout.Bottom)
                 }
@@ -156,7 +156,7 @@ let foodScoreText = ""
 let Holzfällerhütte: Sprite = null
 let n = 0
 let Farm: Sprite = null
-let Affe: Sprite = null
+let Affe2: Sprite = null
 let Kiste: Sprite = null
 let player1: Sprite = null
 let woodScore = 0
@@ -227,7 +227,7 @@ for (let index = 0; index < 1; index++) {
 for (let index = 0; index < 3; index++) {
 	
 }
-Affe = sprites.create(img`
+Affe2 = sprites.create(img`
     . . . . f f f f f . . . . . . . 
     . . . f e e e e e f . . . . . . 
     . . f d d d d e e e f . . . . . 
@@ -264,14 +264,66 @@ Kiste = sprites.create(img`
     . b b . . . . . . . . . . b b . 
     `, SpriteKind.Kisten)
 tiles.placeOnRandomTile(Kiste, sprites.builtin.forestTiles10)
-Affe.setPosition(600, 5)
-Affe.setVelocity(5, 5)
+Affe2.setPosition(600, 120)
+Affe2.setVelocity(5, 5)
+let Haus = sprites.create(img`
+    ....................8a8aa8a8....................
+    .................aaa888aa8a8aaa.................
+    ..............aaa8aa8a8aa888aa8aaa..............
+    ...........8aa8aa8888a8aa8a8888aa8aa8...........
+    ........8888aa8aa8aa8a8aa8a8aa8aa8aa8888........
+    .....aaa8aa8aa8888aa8a8aa8a8aa8888aa8aa8aaa.....
+    ...aa8888aa8aa8aa8aa888aa888aa8aa8aa8aa8888aa...
+    dccaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aaccd
+    bcb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bcb
+    dbbaa8aa8888aa8aa8888a8aa8a8888aa8aa8888aa8aabbd
+    dbbaa8aa8aa8aa8888aa8a8aa8a8aa8888aa8aa8aa8aabbd
+    dccaa8888aa8aa8aa8aa888aa888aa8aa8aa8aa8888aaccd
+    bcbaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aabcb
+    dbb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bbd
+    dbbaa8aa8888aa8aa8aa8a8aa8a8aa8aa8aa8888aa8aabbd
+    dccaa8aa8aa8aa8aa8888a8aa8a8888aa8aa8aa8aa8aaccd
+    bcbaa8888aa8aa8888aa888aa888aa8888aa8aa8888aabcb
+    dbbaa8aa8aa8888aa8aa8a8aa8a8aa8aa8888aa8aa8aabbd
+    dbb888aa8aa8aa8aa8aa8a8aa8a8aa8aa8aa8aa8aa888bbd
+    dccaa8aa8888aa8aa8aa8a8aa8a8aa8aa8aa8888aa8aaccd
+    bcbaa8aa8aa8aa8aa8aa888aa888aa8aa8aa8aa8aa8aabcb
+    dbbaa8888aa8aa8aa888ccbbbbcc888aa8aa8aa8888aabbd
+    dbbaa8aa8aa8aa888ccbbbbbbbbbbcc888aa8aa8aa8aabbd
+    dcc888aa8aa888ccbbbbbccccccbbbbbcc888aa8aa888ccd
+    bcbaa8aa888ccbbbbbccbddddddbccbbbbbcc888aa8aabcb
+    dbbaa8aaccbbbbbccbddddddddddddbccbbbbbccaa8aabbd
+    dbbaaccbbbbcccbddddddddddddddddddbcccbbbbccaabbd
+    dcccbbbbcccbdddbccbbbbbbbbbbbbccbdddbcccbbbbcccd
+    ccccccccbbbbbbbcbddddddddddddddbcbbbbbbbcccccccc
+    bddddddddddddbcddddddddddddddddddcbddddddddddddb
+    bbcbdddddddddcbd1111111111111111dbcdddddddddbcbb
+    bbbcccccccccccd1bbbbbbbbbbbbbbbb1dcccccccccccbbb
+    bbbbdddddddddc11eeeeeeeeeeeeeeee11cdddddddddbbbb
+    bbb8aaaaaaa8dc1be22222222222222eb1cd8aaaaaaa8bbb
+    bbb888888888dc1be22222222222222eb1cd888888888bbb
+    bbb833333338dcbbe22222222222222ebbcd833333338bbb
+    bbb83ff3ff38dcbbe22222222222222ebbcd83ff3ff38bbb
+    bbb83cc3cc38dcbbe22222222222222ebbcd83cc3cc38bbb
+    bbb833333338dcbbe22222222222222ebbcd833333338bbb
+    cbb83ff3ff38dcbbe22222222222222ebbcd83ff3ff38bbc
+    cbb83cc3cc38dcbbe22222222222222ebbcd83cc3cc38bbc
+    ccbbbbbbbbbbdcbbe22222222222e22ebbcdbbbbbbbbbbcc
+    .cbbdddddddddcbbe22222222222e22ebbcdddddddddbbc.
+    ..cbdbbbdbbbdcbbe22222222222222ebbcdbbbdbbbdbc..
+    ...cdbbbdbbbdcbbe22222222222222ebbcdbbbdbbbdc...
+    ....bddddddddcbbe22222222222222ebbcddddddddb....
+    .....bdbbbdddcbbe22222222222222ebbcdddbbbdb.....
+    ......bcccbbbcbbe22222222222222ebbcbbbcccb......
+    `, SpriteKind.Player)
+Haus.setPosition(59, 50)
+let hausLeben = 100
 game.onUpdate(function () {
     if (goldScore >= 15) {
         game.setGameOverMessage(true, "SIEG mit 15 Gold!")
         game.gameOver(true)
     }
-    if (Affe.tileKindAt(TileDirection.Left, sprites.builtin.forestTiles0)) {
+    if (Affe2.tileKindAt(TileDirection.Left, sprites.builtin.forestTiles0)) {
     	
     }
     if (foodScore <= 0) {
@@ -338,6 +390,9 @@ game.onUpdate(function () {
     statusbar_wood.setLabel("Wood:" + woodScoreText)
     statusbar_Tage.setLabel("Days:" + AnzahlTageText)
     statusBar_Jahre.setLabel("Year:" + AnzahlJahreText)
+})
+game.onUpdate(function () {
+    info.setLife(hausLeben)
 })
 game.onUpdateInterval(1000, function () {
     AnzahlTage += 1
@@ -472,17 +527,17 @@ game.onUpdateInterval(1000, function () {
     } else {
         Winter = 0
         n = 0
-        for (let value of sprites.allOfKind(SpriteKind.Wolken)) {
+        for (let value4 of sprites.allOfKind(SpriteKind.Wolken)) {
             n += 1
             if (n <= 2) {
-                sprites.destroy(value)
+                sprites.destroy(value4)
             }
         }
         n = 0
-        for (let value of sprites.allOfKind(SpriteKind.Schnee)) {
+        for (let value5 of sprites.allOfKind(SpriteKind.Schnee)) {
             n += 1
             if (n <= 2) {
-                sprites.destroy(value)
+                sprites.destroy(value5)
             }
         }
     }
