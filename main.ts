@@ -7,6 +7,7 @@ namespace SpriteKind {
     export const Farmen = SpriteKind.create()
     export const Feind = SpriteKind.create()
     export const Affe = SpriteKind.create()
+    export const Haus = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const Wood = StatusBarKind.create()
@@ -315,9 +316,8 @@ let Haus = sprites.create(img`
     ....bddddddddcbbe22222222222222ebbcddddddddb....
     .....bdbbbdddcbbe22222222222222ebbcdddbbbdb.....
     ......bcccbbbcbbe22222222222222ebbcbbbcccb......
-    `, SpriteKind.Player)
+    `, SpriteKind.Haus)
 Haus.setPosition(59, 50)
-let hausLeben = 100
 game.onUpdate(function () {
     if (goldScore >= 15) {
         game.setGameOverMessage(true, "SIEG mit 15 Gold!")
@@ -390,9 +390,6 @@ game.onUpdate(function () {
     statusbar_wood.setLabel("Wood:" + woodScoreText)
     statusbar_Tage.setLabel("Days:" + AnzahlTageText)
     statusBar_Jahre.setLabel("Year:" + AnzahlJahreText)
-})
-game.onUpdate(function () {
-    info.setLife(hausLeben)
 })
 game.onUpdateInterval(1000, function () {
     AnzahlTage += 1
