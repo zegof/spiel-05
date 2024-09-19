@@ -22,26 +22,8 @@ namespace myImages {
 . . . . . f f f f f f . . . . . 
 . . . . . f f . . f f . . . . . 
 `;
-            case "Truhe":return img`
-. . b b b b b b b b b b b b . . 
-. b e 4 4 4 4 4 4 4 4 4 4 e b . 
-b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
-b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
-b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
-b e e 4 4 4 4 4 4 4 4 4 4 e e b 
-b e e e e e e e e e e e e e e b 
-b e e e e e e e e e e e e e e b 
-b b b b b b b d d b b b b b b b 
-c b b b b b b c c b b b b b b c 
-c c c c c c b c c b c c c c c c 
-b e e e e e c b b c e e e e e b 
-b e e e e e e e e e e e e e e b 
-b c e e e e e e e e e e e e c b 
-b b b b b b b b b b b b b b b b 
-. b b . . . . . . . . . . b b . 
-`;
             case "V]nVS[uUB(^Bc#;+H0+G":
-            case "Wald":return img`
+            case "Wald_bild":return img`
 ...66666666666666666666.66777777777766..........................
 .6677777777776677777777667777777777776.........6666666666.......
 .67777777777776777777776777777777777776......66777777777766.....
@@ -106,6 +88,43 @@ f6777777777777776676777677776777666766776667668667667766676668..
 ................................................................
 ................................................................
 ................................................................
+`;
+            case "Truhe1":return img`
+. . b b b b b b b b b b b b . . 
+. b e 4 4 4 4 4 4 4 4 4 4 e b . 
+b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+b e e 4 4 4 4 4 4 4 4 4 4 e e b 
+b e e e e e e e e e e e e e e b 
+b e e e e e e e e e e e e e e b 
+b b b b b b b d d b b b b b b b 
+c b b b b b b c c b b b b b b c 
+c c c c c c b c c b c c c c c c 
+b e e e e e c b b c e e e e e b 
+b e e e e e e e e e e e e e e b 
+b c e e e e e e e e e e e e c b 
+b b b b b b b b b b b b b b b b 
+. b b . . . . . . . . . . b b . 
+`;
+            case "]~PT$a^(FRXTHNv/Ax1#":
+            case "Truhe2":return img`
+. . b b b b b b b b b b b b . . 
+. b e 4 4 4 4 4 4 4 4 4 4 e b . 
+b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+b e e 4 4 4 4 4 4 4 4 4 4 e e b 
+b e e e e e e e e e e e e e e b 
+b e e e e e e e e e e e e e e b 
+b b b b b b b d d b b b b b b b 
+c b b b b b b c c b b b b b b c 
+c c c c c c b c c b c c c c c c 
+b e e e e e c b b c e e e e e b 
+b e e e e e e e e e e e e e e b 
+b c e e e e e e e e e e e e c b 
+b b b b b b b b b b b b b b b b 
+. b b . . . . . . . . . . b b . 
 `;
             case "A$!(n":
             case "Affe":return img`
@@ -178,7 +197,7 @@ ccbbbbbbbbbbdcbbe22222222222e22ebbcdbbbbbbbbbbcc
 ......bcccbbbcbbe22222222222222ebbcbbbcccb......
 `;
             case "V$F|W_v#|KJ~iE57Sy":
-            case "Holzfaelerhuete":return img`
+            case "Holzfaekerhuette":return img`
 ....................e2e22e2e....................
 .................222eee22e2e222.................
 ..............222e22e2e22eee22e222..............
@@ -227,6 +246,139 @@ cc66666666664c66e4e44e44e44feeee66c46666666666cc
 ....644444444c66f4e44e44e44e44ee66c444444446....
 .....64eee444c66f4e44e44e44e44ee66c444eee46.....
 ......6ccc666c66e4e44e44e44e44ee66c666ccc6......
+`;
+            case "t^A7gl@BN$pH{!`F-ZH)":
+            case "Farm":return img`
+. . . . . . . . . . . 6 6 6 6 6 
+. . . . . . . . . 6 6 7 7 7 7 8 
+. . . . . . 8 8 8 7 7 8 8 6 8 8 
+. . e e e e c 6 6 8 8 . 8 7 8 . 
+. e 2 5 4 2 e c 8 . . . 6 7 8 . 
+e 2 4 2 2 2 2 2 c . . . 6 7 8 . 
+e 2 2 2 2 2 2 2 c . . . 8 6 8 . 
+e 2 e e 2 2 2 2 e e e e c 6 8 . 
+c 2 e e 2 2 2 2 e 2 5 4 2 c 8 . 
+. c 2 e e e 2 e 2 4 2 2 2 2 c . 
+. . c 2 2 2 e e 2 2 2 2 2 2 2 e 
+. . . e c c e c 2 2 2 2 2 2 2 e 
+. . . . . . . c 2 e e 2 2 e 2 c 
+. . . . . . . c e e e e e e 2 c 
+. . . . . . . . c e 2 2 2 2 c . 
+. . . . . . . . . c c c c c . . 
+`;
+            case "w8?ObU+m#opK:+0*{Z;g":
+            case "Schnee1":return img`
+. . . . . . . . b . . . . . . . 
+. . . . . . b d d c . . . . . . 
+. . . . . b 1 1 d d c . . . . . 
+. . . . b 1 1 1 d 1 1 b . . . . 
+. . . . c 1 1 1 d 1 1 1 c c . . 
+b b b c d 1 1 c c 1 1 d 1 1 b b 
+b d 1 1 d d b c c c b d 1 1 1 b 
+b 1 1 1 1 c c . . c d d 1 1 1 b 
+b 1 1 1 1 c c . . b 1 1 d d c . 
+. b 1 1 d d b c b b 1 1 b c c . 
+. . c b d d b 1 1 b b d b c . . 
+. . c 1 1 d d 1 1 1 d d d b . . 
+. b d 1 1 1 d 1 1 d 1 1 1 d b . 
+. b d 1 1 1 d b b d 1 1 1 1 b . 
+. . b 1 1 d c c b b d 1 1 d b . 
+. . b b b b . . . b b b b b b . 
+`;
+            case ";Lg,(C$I(4E0oqQ-MB,:":
+            case "Schneewolke1":return img`
+.........bbbb...........
+.......bb1111bb.........
+......bb111111bbbbb.....
+......b1111111ddd11b....
+......b11111111d1111b...
+...bbbd11111111d1111b...
+..b11111111111111111bb..
+.b11111111111111111d11b.
+.b111d11111111111111111b
+cdd1d111111111111111111c
+cdddd11111111111111111dc
+cddbd11111d11111dd111dc.
+.cbbdd111dddd11ddbdddcc.
+.ccbbdddddbdddddddbcc...
+...cccdddbbbdddddcc.....
+......ccccccccccc.......
+`;
+            case "#":
+            case "Schneewolke2":return img`
+.........bbbb...........
+.......bb1111bb.........
+......bb111111bbbbb.....
+......b1111111ddd11b....
+......b11111111d1111b...
+...bbbd11111111d1111b...
+..b11111111111111111bb..
+.b11111111111111111d11b.
+.b111d11111111111111111b
+cdd1d111111111111111111c
+cdddd11111111111111111dc
+cddbd11111d11111dd111dc.
+.cbbdd111dddd11ddbdddcc.
+.ccbbdddddbdddddddbcc...
+...cccdddbbbdddddcc.....
+......ccccccccccc.......
+`;
+            case "~mkxq*|h8j[5-e^S?{n{":
+            case "Schnee2":return img`
+. . . . . . . . b . . . . . . . 
+. . . . . . b d d c . . . . . . 
+. . . . . b 1 1 d d c . . . . . 
+. . . . b 1 1 1 d 1 1 b . . . . 
+. . . . c 1 1 1 d 1 1 1 c c . . 
+b b b c d 1 1 c c 1 1 d 1 1 b b 
+b d 1 1 d d b c c c b d 1 1 1 b 
+b 1 1 1 1 c c . . c d d 1 1 1 b 
+b 1 1 1 1 c c . . b 1 1 d d c . 
+. b 1 1 d d b c b b 1 1 b c c . 
+. . c b d d b 1 1 b b d b c . . 
+. . c 1 1 d d 1 1 1 d d d b . . 
+. b d 1 1 1 d 1 1 d 1 1 1 d b . 
+. b d 1 1 1 d b b d 1 1 1 1 b . 
+. . b 1 1 d c c b b d 1 1 d b . 
+. . b b b b . . . b b b b b b . 
+`;
+            case "YK%V^=TF]7n2?GZV8#7p":
+            case "Schnee3":return img`
+. . . . . . . . b . . . . . . . 
+. . . . . . b d d c . . . . . . 
+. . . . . b 1 1 d d c . . . . . 
+. . . . b 1 1 1 d 1 1 b . . . . 
+. . . . c 1 1 1 d 1 1 1 c c . . 
+b b b c d 1 1 c c 1 1 d 1 1 b b 
+b d 1 1 d d b c c c b d 1 1 1 b 
+b 1 1 1 1 c c . . c d d 1 1 1 b 
+b 1 1 1 1 c c . . b 1 1 d d c . 
+. b 1 1 d d b c b b 1 1 b c c . 
+. . c b d d b 1 1 b b d b c . . 
+. . c 1 1 d d 1 1 1 d d d b . . 
+. b d 1 1 1 d 1 1 d 1 1 1 d b . 
+. b d 1 1 1 d b b d 1 1 1 1 b . 
+. . b 1 1 d c c b b d 1 1 d b . 
+. . b b b b . . . b b b b b b . 
+`;
+            case "|y=K`8":
+            case "Schneewolke3":return img`
+.........bbbb...........
+.......bb1111bb.........
+......bb111111bbbbb.....
+......b1111111ddd11b....
+......b11111111d1111b...
+...bbbd11111111d1111b...
+..b11111111111111111bb..
+.b11111111111111111d11b.
+.b111d11111111111111111b
+cdd1d111111111111111111c
+cdddd11111111111111111dc
+cddbd11111d11111dd111dc.
+.cbbdd111dddd11ddbdddcc.
+.ccbbdddddbdddddddbcc...
+...cccdddbbbdddddcc.....
+......ccccccccccc.......
 `;
         }
         return null;
