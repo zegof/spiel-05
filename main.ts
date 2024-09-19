@@ -36,8 +36,8 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Farmen, function (sprite, otherSp
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (player1.tileKindAt(TileDirection.Center, sprites.builtin.forestTiles0)) {
         n = 0
-        for (let value2 of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
-            if (player1.overlapsWith(value2)) {
+        for (let Wald of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
+            if (player1.overlapsWith(Wald)) {
                 n += 1
             }
         }
@@ -158,6 +158,7 @@ let Holzfällerhütte: Sprite = null
 let n = 0
 let Farm: Sprite = null
 let Affe2: Sprite = null
+let Wald: Sprite = null
 let Kiste: Sprite = null
 let player1: Sprite = null
 let woodScore = 0
@@ -209,7 +210,7 @@ for (let index = 0; index < 1; index++) {
     tiles.placeOnRandomTile(Kiste, sprites.castle.tilePath5)
 }
 for (let index = 0; index < 20; index++) {
-    Kiste = sprites.create(img`
+    Wald = sprites.create(img`
         ...66666666666666666666.66777777777766..........................
         .6677777777776677777777667777777777776.........6666666666.......
         .67777777777776777777776777777777777776......66777777777766.....
@@ -275,7 +276,7 @@ for (let index = 0; index < 20; index++) {
         ................................................................
         ................................................................
         `, SpriteKind.Kisten)
-    tiles.placeOnRandomTile(Kiste, sprites.castle.tilePath5)
+    tiles.placeOnRandomTile(Wald, sprites.swamp.swampTile2)
 }
 for (let index = 0; index < 3; index++) {
 	
