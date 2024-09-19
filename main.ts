@@ -15,9 +15,6 @@ namespace StatusBarKind {
     export const Gold = StatusBarKind.create()
     export const Food = StatusBarKind.create()
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.wald, function (sprite, otherSprite) {
-	
-})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let value of sprites.allOfKind(SpriteKind.Kisten)) {
         if (player1.overlapsWith(value)) {
@@ -38,28 +35,6 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Farmen, function (sprite, otherSp
     }
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (player1.tileKindAt(TileDirection.Center, assets.tile`myTile`)) {
-        n = 0
-        for (let value of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
-            if (player1.overlapsWith(value)) {
-                n += 1
-            }
-        }
-        if (n == 0) {
-            if (sprites.allOfKind(SpriteKind.Holzfällerhütten).length < 3) {
-                if (woodScore >= 60) {
-                    woodScore += -60
-                    Holzfällerhütte = sprites.create(assets.image`Holzfaekerhuette`, SpriteKind.Holzfällerhütten)
-                    scaling.scaleToPercent(Holzfällerhütte, 30, ScaleDirection.Uniformly, ScaleAnchor.Middle)
-                    Holzfällerhütte.setPosition(player1.x, player1.y)
-                } else {
-                    game.showLongText("Holzfällerhütte erfordert 60 Holz.", DialogLayout.Bottom)
-                }
-            } else {
-                game.showLongText("Es können nur 3 Holzfällerhütten gebaut werden.", DialogLayout.Bottom)
-            }
-        }
-    }
     if (player1.tileKindAt(TileDirection.Center, sprites.castle.tileGrass3)) {
         n = 0
         for (let value3 of sprites.allOfKind(SpriteKind.Farmen)) {
@@ -87,12 +62,12 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 let Wolke: Sprite = null
 let Schneeflocke: Sprite = null
 let Winter = 0
+let Holzfällerhütte: Sprite = null
 let AnzahlJahreText = ""
 let AnzahlTageText = ""
 let woodScoreText = ""
 let goldScoreText = ""
 let foodScoreText = ""
-let Holzfällerhütte: Sprite = null
 let n = 0
 let Farm: Sprite = null
 let Affe2: Sprite = null
@@ -216,6 +191,28 @@ game.onUpdate(function () {
     statusbar_wood.setLabel("Wood:" + woodScoreText)
     statusbar_Tage.setLabel("Days:" + AnzahlTageText)
     statusBar_Jahre.setLabel("Year:" + AnzahlJahreText)
+    if (player1.overlapsWith(Wald) && controller.B.isPressed()) {
+        n = 0
+        for (let value2 of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
+            if (player1.overlapsWith(value2)) {
+                n += 1
+            }
+        }
+        if (n == 0) {
+            if (sprites.allOfKind(SpriteKind.Holzfällerhütten).length < 3) {
+                if (woodScore >= 60) {
+                    woodScore += -60
+                    Holzfällerhütte = sprites.create(assets.image`Holzfaekerhuette`, SpriteKind.Holzfällerhütten)
+                    scaling.scaleToPercent(Holzfällerhütte, 30, ScaleDirection.Uniformly, ScaleAnchor.Middle)
+                    Holzfällerhütte.setPosition(player1.x, player1.y)
+                } else {
+                    game.showLongText("Holzfällerhütte erfordert 60 Holz.", DialogLayout.Bottom)
+                }
+            } else {
+                game.showLongText("Es können nur 3 Holzfällerhütten gebaut werden.", DialogLayout.Bottom)
+            }
+        }
+    }
 })
 game.onUpdateInterval(1000, function () {
     AnzahlTage += 1
