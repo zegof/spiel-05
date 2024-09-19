@@ -40,8 +40,8 @@ sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Farmen, function (sprite, otherSp
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (player1.tileKindAt(TileDirection.Center, assets.tile`myTile`)) {
         n = 0
-        for (let value2 of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
-            if (player1.overlapsWith(value2)) {
+        for (let value of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
+            if (player1.overlapsWith(value)) {
                 n += 1
             }
         }
