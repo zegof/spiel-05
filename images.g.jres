@@ -69,6 +69,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Holzfällerhütte"
     },
+    "image1": {
+        "data": "hwQwADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg///v///+/+//j0hEJCIiIkJEBAAAAADg///v///+/+///0hEJCIiIkJEBAAAAADu7u7u7u7u7u7u+EhEJCIiIkJEBAAAAAD+/+////7/7///+EhEJCIiIkJEBAAAAAD+/+////7/7////0hEJCIiIkJEBAAAAO7u7u7u7u7u7u6Oj0REJCIiIkJEBAAAAP7/7////v/v//+Oj0REJCIiIkJEBAAAAP7/7////v/v///+j0REJCIiIkJEBAAA7u7u7u7u7u7u7u74SEREJCIiIkJEBAAA/v/v///+/+///+/4SEREREREREREBAAA/v/v///+/+///+//SEREREREREREBADg7u7u7u7u7u7u7o7/T0REVVVVVVVVBQDg/+////7///7//46PRURU9f//////DwDg/+////7///7///6PRURV9f//////DwDg7u7u7u7u7u7u7vj/RURVj4iIiIiICAD+7///7///7///7/hYRURV////////DwD+7///7///7///7/9YRURVj4iIiIiICADu7u7u7u7u7u7ujv9fRURVj4iIiIiICADv///+/+////7/jo9VRURV////////DwDu7u7u7u7u7u7u/o9VRURVj4iIiIiICAD//////////////49VRURVj4iIiIiICAD//////////////49VRURV////////DwDu7u7u7u7u7u7u/o9VRURVj4iIiIiICAD//v/+/+////7/jo9VRURVj4iIiIiICADu7u7u7u7u7u7ujv9fRURV////////DwD+7///7///7///7/9YRURVj4iIiIiICAD+7///7///7///7/hYRURVj4iIiIiICADu7u7u7u7u7u7u7vj/RURV////////DwDg/+////7///7///6PRURV9f//////DwDg/+////7///7//46PRURU9f//////DwDg7u7u7u7u7u7u7o7/T0REVVVVVVVVBQAA/v/v///+/+///+//SEREREREREREBAAA/v/v///+/+///+/4SEREREREREREBAAA4O7u7u7u7u7u7u74SEREJCIiIiJEBAAAAP7/7////v/v///+j0REJCIiIiJEBAAAAP7/7////v/v//+Oj0REJCIiIiJEBAAAAO7u7u7u7u7u7u6Oj0REJCIiIiJEBAAAAAD+/+////7/7////0hEJCIiIiJEBAAAAAD+/+////7/7///+EhEJCIiIiJEBAAAAADu7u7u7u7u7u7u+EhEJCIiIiJEBAAAAAAA/v/v///+/+///0hEJCIiIiJEBAAAAAAA/v/v///+/+//j0hEJCIiIiJEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Militärlager"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
