@@ -9,6 +9,7 @@ namespace SpriteKind {
     export const Affe = SpriteKind.create()
     export const Haus = SpriteKind.create()
     export const wald = SpriteKind.create()
+    export const Militärlager = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const Wood = StatusBarKind.create()
@@ -23,6 +24,19 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             goldScore += 20
             woodScore += 20
             game.showLongText("Du findest jeweils 20 Essen, Holz und Gold!", DialogLayout.Bottom)
+        } else {
+            if (sprites.allOfKind(SpriteKind.Militärlager).length < 3) {
+                if (woodScore >= 180) {
+                    woodScore += -180
+                    Militärlager = sprites.create(assets.image`Militärlager`, SpriteKind.Militärlager)
+                    scaling.scaleToPercent(Farm, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
+                    Militärlager.setPosition(player1.x, player1.y)
+                } else {
+                    game.showLongText("Militärlager erfordert 180 Holz.", DialogLayout.Bottom)
+                }
+            } else {
+                game.showLongText("Es können nur 3 Militärlager gebaut werden.", DialogLayout.Bottom)
+            }
         }
     }
 })
@@ -83,15 +97,16 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 let Wolke: Sprite = null
 let Schneeflocke: Sprite = null
-let Winter = 0
 let AnzahlJahreText = ""
 let AnzahlTageText = ""
 let woodScoreText = ""
 let goldScoreText = ""
 let foodScoreText = ""
+let Winter = 0
 let Holzfällerhütte: Sprite = null
 let n = 0
 let Farm: Sprite = null
+let Militärlager: Sprite = null
 let Affe2: Sprite = null
 let Wald: Sprite = null
 let Kiste: Sprite = null
@@ -142,6 +157,7 @@ Affe2.setVelocity(5, 5)
 let Haus2 = sprites.create(assets.image`Haus`, SpriteKind.Haus)
 Haus2.setPosition(59, 50)
 game.onUpdate(function () {
+    console.log(Winter)
     if (goldScore >= 15) {
         game.setGameOverMessage(true, "SIEG mit 15 Gold!")
         game.gameOver(true)
