@@ -58,16 +58,38 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
             }
         }
     }
+    if (player1.tileKindAt(TileDirection.Center, sprites.builtin.forestTiles23)) {
+        n = 0
+        for (let value2 of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
+            if (player1.overlapsWith(value2)) {
+                n += 1
+            }
+        }
+        if (n == 0) {
+            if (sprites.allOfKind(SpriteKind.Holzfällerhütten).length < 3) {
+                if (woodScore >= 60) {
+                    woodScore += -60
+                    Holzfällerhütte = sprites.create(assets.image`Holzfällerhütte`, SpriteKind.Holzfällerhütten)
+                    scaling.scaleToPercent(Holzfällerhütte, 30, ScaleDirection.Uniformly, ScaleAnchor.Middle)
+                    Holzfällerhütte.setPosition(player1.x, player1.y)
+                } else {
+                    game.showLongText("Holzfällerhütte erfordert 60 Holz.", DialogLayout.Bottom)
+                }
+            } else {
+                game.showLongText("Es können nur 3 Holzfällerhütten gebaut werden.", DialogLayout.Bottom)
+            }
+        }
+    }
 })
 let Wolke: Sprite = null
 let Schneeflocke: Sprite = null
 let Winter = 0
-let Holzfällerhütte: Sprite = null
 let AnzahlJahreText = ""
 let AnzahlTageText = ""
 let woodScoreText = ""
 let goldScoreText = ""
 let foodScoreText = ""
+let Holzfällerhütte: Sprite = null
 let n = 0
 let Farm: Sprite = null
 let Affe2: Sprite = null
@@ -105,9 +127,9 @@ for (let index = 0; index < 1; index++) {
     Kiste = sprites.create(assets.image`Truhe1`, SpriteKind.Kisten)
     tiles.placeOnRandomTile(Kiste, sprites.castle.tilePath5)
 }
-for (let index = 0; index < 20; index++) {
+for (let index = 0; index < 8; index++) {
     Wald = sprites.create(assets.image`Wald_bild`, SpriteKind.wald)
-    tiles.placeOnRandomTile(Wald, sprites.builtin.forestTiles23)
+    tiles.placeOnRandomTile(Wald, assets.tile`myTile6`)
 }
 for (let index = 0; index < 3; index++) {
 	
@@ -117,8 +139,8 @@ Kiste = sprites.create(assets.image`Truhe2`, SpriteKind.Kisten)
 tiles.placeOnRandomTile(Kiste, sprites.builtin.forestTiles10)
 Affe2.setPosition(600, 120)
 Affe2.setVelocity(5, 5)
-let Haus = sprites.create(assets.image`Haus`, SpriteKind.Haus)
-Haus.setPosition(59, 50)
+let Haus2 = sprites.create(assets.image`Haus`, SpriteKind.Haus)
+Haus2.setPosition(59, 50)
 game.onUpdate(function () {
     if (goldScore >= 15) {
         game.setGameOverMessage(true, "SIEG mit 15 Gold!")
@@ -191,28 +213,6 @@ game.onUpdate(function () {
     statusbar_wood.setLabel("Wood:" + woodScoreText)
     statusbar_Tage.setLabel("Days:" + AnzahlTageText)
     statusBar_Jahre.setLabel("Year:" + AnzahlJahreText)
-    if (player1.overlapsWith(Wald) && controller.B.isPressed()) {
-        n = 0
-        for (let value2 of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
-            if (player1.overlapsWith(value2)) {
-                n += 1
-            }
-        }
-        if (n == 0) {
-            if (sprites.allOfKind(SpriteKind.Holzfällerhütten).length < 3) {
-                if (woodScore >= 60) {
-                    woodScore += -60
-                    Holzfällerhütte = sprites.create(assets.image`Holzfaekerhuette`, SpriteKind.Holzfällerhütten)
-                    scaling.scaleToPercent(Holzfällerhütte, 30, ScaleDirection.Uniformly, ScaleAnchor.Middle)
-                    Holzfällerhütte.setPosition(player1.x, player1.y)
-                } else {
-                    game.showLongText("Holzfällerhütte erfordert 60 Holz.", DialogLayout.Bottom)
-                }
-            } else {
-                game.showLongText("Es können nur 3 Holzfällerhütten gebaut werden.", DialogLayout.Bottom)
-            }
-        }
-    }
 })
 game.onUpdateInterval(1000, function () {
     AnzahlTage += 1
