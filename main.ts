@@ -29,7 +29,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
                 if (woodScore >= 180) {
                     woodScore += -180
                     Militärlager = sprites.create(assets.image`Militärlager`, SpriteKind.Militärlager)
-                    scaling.scaleToPercent(Farm, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
+                    scaling.scaleToPercent(Militärlager, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
                     Militärlager.setPosition(player1.x, player1.y)
                 } else {
                     game.showLongText("Militärlager erfordert 180 Holz.", DialogLayout.Bottom)
@@ -94,15 +94,18 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
             }
         }
     }
+    if (player1.overlapsWith(Militärlager)) {
+        goldScore += -3
+    }
 })
 let Wolke: Sprite = null
 let Schneeflocke: Sprite = null
+let Winter = 0
 let AnzahlJahreText = ""
 let AnzahlTageText = ""
 let woodScoreText = ""
 let goldScoreText = ""
 let foodScoreText = ""
-let Winter = 0
 let Holzfällerhütte: Sprite = null
 let n = 0
 let Farm: Sprite = null
@@ -157,9 +160,8 @@ Affe2.setVelocity(5, 5)
 let Haus2 = sprites.create(assets.image`Haus`, SpriteKind.Haus)
 Haus2.setPosition(59, 50)
 game.onUpdate(function () {
-    console.log(Winter)
-    if (goldScore >= 15) {
-        game.setGameOverMessage(true, "SIEG mit 15 Gold!")
+    if (goldScore >= 200) {
+        game.setGameOverMessage(true, "SIEG mit 200 Gold!")
         game.gameOver(true)
     }
     if (Affe2.tileKindAt(TileDirection.Left, sprites.builtin.forestTiles0)) {
