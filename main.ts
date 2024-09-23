@@ -27,18 +27,20 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             goldScore += 20
             woodScore += 20
             game.showLongText("Du findest jeweils 20 Essen, Holz und Gold!", DialogLayout.Bottom)
-        } else {
+        }
+        if (player1.tileKindAt(TileDirection.Left, sprites.castle.tilePath5)) {
             if (sprites.allOfKind(SpriteKind.Militärlager).length < 3) {
-                if (woodScore >= 180) {
-                    woodScore += -180
-                    Militärlager2 = sprites.create(assets.image`Militärlager`, SpriteKind.Militärlager)
-                    scaling.scaleToPercent(Militärlager2, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
-                    Militärlager2.setPosition(player1.x, player1.y)
-                } else {
-                    game.showLongText("Militärlager erfordert 180 Holz.", DialogLayout.Bottom)
+                for (let index = 0; index < 1; index++) {
+                    if (woodScore >= 180) {
+                        woodScore += -180
+                        Militärlager2 = sprites.create(assets.image`Militärlager`, SpriteKind.Militärlager)
+                        scaling.scaleToPercent(Militärlager2, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
+                        Militärlager2.setPosition(player1.x, player1.y)
+                    }
                 }
             } else {
                 game.showLongText("Es können nur 3 Militärlager gebaut werden.", DialogLayout.Bottom)
+                game.showLongText("Militärlager erfordert 180 Holz.", DialogLayout.Bottom)
             }
         }
     }
@@ -97,7 +99,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
             }
         }
     }
-    if (player1.overlapsWith(Militärlager2) && controller.B.isPressed()) {
+    if (player1.overlapsWith(Militärlager2) && true) {
         if (sprites.allOfKind(SpriteKind.Soldaten).length < 3) {
             if (goldScore >= 3) {
                 goldScore += -3
