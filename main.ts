@@ -10,11 +10,14 @@ namespace SpriteKind {
     export const Haus = SpriteKind.create()
     export const wald = SpriteKind.create()
     export const Militärlager = SpriteKind.create()
+    export const Ackerland = SpriteKind.create()
+    export const Soldaten = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const Wood = StatusBarKind.create()
     export const Gold = StatusBarKind.create()
     export const Food = StatusBarKind.create()
+    export const SoldatHealth = StatusBarKind.create()
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let value of sprites.allOfKind(SpriteKind.Kisten)) {
@@ -28,9 +31,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             if (sprites.allOfKind(SpriteKind.Militärlager).length < 3) {
                 if (woodScore >= 180) {
                     woodScore += -180
-                    Militärlager = sprites.create(assets.image`Militärlager`, SpriteKind.Militärlager)
-                    scaling.scaleToPercent(Militärlager, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
-                    Militärlager.setPosition(player1.x, player1.y)
+                    Militärlager2 = sprites.create(assets.image`Militärlager`, SpriteKind.Militärlager)
+                    scaling.scaleToPercent(Militärlager2, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
+                    Militärlager2.setPosition(player1.x, player1.y)
                 } else {
                     game.showLongText("Militärlager erfordert 180 Holz.", DialogLayout.Bottom)
                 }
@@ -40,7 +43,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
-sprites.onOverlap(SpriteKind.Enemy, SpriteKind.Farmen, function (sprite, otherSprite) {
+sprites.onOverlap(SpriteKind.Affe, SpriteKind.Farmen, function (sprite, otherSprite) {
     foodScore += -10
     if (true) {
         Affe2.setPosition(600, 120)
@@ -94,8 +97,22 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
             }
         }
     }
-    if (player1.overlapsWith(Militärlager)) {
-        goldScore += -3
+    if (player1.overlapsWith(Militärlager2) && controller.B.isPressed()) {
+        if (sprites.allOfKind(SpriteKind.Soldaten).length < 3) {
+            if (goldScore >= 3) {
+                goldScore += -3
+                Soldat = sprites.create(assets.image`Soldat_BILD`, SpriteKind.Soldaten)
+                Soldat.setPosition(player1.x, player1.y)
+                Soldat.follow(Affe2, 75)
+                Soldat.setFlag(SpriteFlag.GhostThroughWalls, true)
+                statusbar = statusbars.create(20, 2, StatusBarKind.Health)
+                statusbar.attachToSprite(Soldat, 0, -4)
+            } else {
+                game.showLongText("Soldat erfordert 3 Gold.", DialogLayout.Bottom)
+            }
+        } else {
+            game.showLongText("Es können nur 3 Soldaten pro Militärlager gebaut werden.", DialogLayout.Bottom)
+        }
     }
 })
 let Wolke: Sprite = null
@@ -106,19 +123,22 @@ let AnzahlTageText = ""
 let woodScoreText = ""
 let goldScoreText = ""
 let foodScoreText = ""
+let Soldat: Sprite = null
 let Holzfällerhütte: Sprite = null
 let n = 0
 let Farm: Sprite = null
-let Militärlager: Sprite = null
+let Militärlager2: Sprite = null
+let statusbar: StatusBarSprite = null
 let Affe2: Sprite = null
 let Wald: Sprite = null
 let Kiste: Sprite = null
 let player1: Sprite = null
 let woodScore = 0
+let goldScore = 0
 tiles.setCurrentTilemap(tilemap`level01`)
 let foodScore = 100
-let goldScore = 10
-woodScore = 100
+goldScore = 100
+woodScore = 200
 let AnzahlTage = 61
 let AnzahlJahre = 1
 let statusbar_food = statusbars.create(30, 0, StatusBarKind.Energy)
@@ -149,14 +169,14 @@ for (let index = 0; index < 8; index++) {
     Wald = sprites.create(assets.image`Wald_bild`, SpriteKind.wald)
     tiles.placeOnRandomTile(Wald, assets.tile`myTile6`)
 }
-for (let index = 0; index < 3; index++) {
-	
-}
-Affe2 = sprites.create(assets.image`Affe`, SpriteKind.Enemy)
+Affe2 = sprites.create(assets.image`Affe`, SpriteKind.Affe)
 Kiste = sprites.create(assets.image`Truhe2`, SpriteKind.Kisten)
 tiles.placeOnRandomTile(Kiste, sprites.builtin.forestTiles10)
 Affe2.setPosition(600, 120)
 Affe2.setVelocity(5, 5)
+Affe2.setFlag(SpriteFlag.GhostThroughWalls, true)
+statusbar = statusbars.create(20, 2, StatusBarKind.Health)
+statusbar.attachToSprite(Affe2, 0, -2)
 let Haus2 = sprites.create(assets.image`Haus`, SpriteKind.Haus)
 Haus2.setPosition(59, 50)
 game.onUpdate(function () {

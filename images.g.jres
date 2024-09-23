@@ -1,122 +1,87 @@
 {
-    "myImages.y3o%)f!~V?": {
-        "id": "myImages.y3o%)f!~V?",
+    "y3o%)f!~V?": {
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAPAPAAAAAPD///7gRAAA/+/v7k9NAPD/Lv/k/v8A8O/yv9EuQv//4vL+3yRC/y/i8k7dJFIPL+LyTt0kUg//4vL+3yRC//Dv8r/RLkL/8P8u/+T+/wAA/+7v7k9NAADw///+4EQAAAAA8A8AAAAAAAAAAAAAAA==",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Player"
     },
-    "myImages.": {
-        "id": "myImages.",
+    "": {
         "data": "hwQQABAAAAAAu7u7y7y7C7Du7u677M6760Tk7rvs7rtLRETuu+zuC0tERO677O4LS0RE7rvs7gtLRETuu8vuC0tERO7NvO4LS0RE7s287gtLRETuu8vuC0tERO677O4LS0RE7rvs7gtLRETuu+zuC+tE5O677O67sO7u7rvszrsAu7u7y7y7Cw==",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Truhe1"
     },
-    "myImages.]~PT$a^(FRXTHNv/Ax1#": {
-        "id": "myImages.]~PT$a^(FRXTHNv/Ax1#",
+    "]~PT$a^(FRXTHNv/Ax1#": {
         "data": "hwQQABAAAAAAu7u7y7y7C7Du7u677M6760Tk7rvs7rtLRETuu+zuC0tERO677O4LS0RE7rvs7gtLRETuu8vuC0tERO7NvO4LS0RE7s287gtLRETuu8vuC0tERO677O4LS0RE7rvs7gtLRETuu+zuC+tE5O677O67sO7u7rvszrsAu7u7y7y7Cw==",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Truhe2"
     },
-    "myImages.A$!(n": {
-        "id": "myImages.A$!(n",
+    "A$!(n": {
         "data": "hwQQABAAAAAAAMDMAAAAAADA3M0PAAAAAN/tzf0AAADw/e/N/fD/D+/d3c397979793d3P3+v/3v/d/d/f7//O/e3d3u7t797+7u7u7+v/3w7u7u7+7++wD/vfvv7v77APDdzfDu7v0AAM8MAO/+/wAAAPD//w8AAAAA7+7+AAAAAAD//w8AAA==",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Affe"
     },
-    "myImages.%F(5m_o(E[,QhxOu}OB3": {
-        "id": "myImages.%F(5m_o(E[,QhxOu}OB3",
+    "%F(5m_o(E[,QhxOu}OB3": {
         "data": "hwQwADAAAAAAAADQ293b3dvd293b3by7u7u7y8wAAAAAAADAvMu8y7zLvMu8y9y7u7u7u8sMAAAAAADAu8u7y7vLu8u7y9y8u7u7u7vLAAAAAACqqKqKqqqoqoqqytzLi4iIiLi7DAAAAACqqKqKqqqoqoqqutzNrTgzM7PdvQAAAKCIiIiIiIiIiIiIvNzNrTjP87y92wsAAKCoqoqqqqiqiqqqvNzNrTjP87y9270AAKCoqoqqqqiqiqqqu9zNrTgzM7O928sAAIiIiIiIiIiIiIjIy9vNrTjP87zd3csAAKiqiqqqqKqKqqrIy9vNrTjP87y928sAAKiqiqqqqKqKqqq4y9vNrTgzM7O9270AgIiIiIiIiIiIiIi8vNvNjYiIiLi9270AoKqKqqqoqoqqqoq83NvN3d3d3d3d3b0AoKqKqqqoqoqqqoq73LvMzMzMzMzMzMwAioiIiIiIiIiIiMi728vbEbG7u7u7u7sAqoqqqqiqqqiqqsjLvdwdsbu7u7u7u7sAqoqqqqiqqqiqqrjLzdux7u7u7u7u7u6giIiIiIiIiIiIiLy7zd2xLiIiIiIiIiKgiqqqiqqqiqqqirzcvd2xLiIiIiIiIiKgiqqqiqqqiqqqirvcvd2xLiIiIiIiIiKIiIiIiIiIiIiIyLvbvd2xLiIiIiIiIiKKqqqoqoqqqqiqyMvdvd2xLiIiIiIiIiKIiIiIiIiIiIiIuMvdvd2xLiIiIiIiIiKqqqqqqqqqqqqqusvdvd2xLiIiIiIiIiKqqqqqqqqqqqqqusvdvd2xLiIiIiIiIiKIiIiIiIiIiIiIuMvdvd2xLiIiIiIiIiKqqKqoqoqqqqiqyMvdvd2xLiIiIiIiIiKIiIiIiIiIiIiIyLvbvd2xLiIiIiIiIiKgiqqqiqqqiqqqirvcvd2xLiIiIuIuIiKgiqqqiqqqiqqqirzcvd2xLiIiIiIiIiKgiIiIiIiIiIiIiLy7zd2xLiIiIiIiIiIAqoqqqqiqqqiqqrjLzdux7u7u7u7u7u4AqoqqqqiqqqiqqsjLvdwdsbu7u7u7u7sAioiIiIiIiIiIiMi728vbEbG7u7u7u7sAoKqKqqqoqoqqqoq73LvMzMzMzMzMzMwAoKqKqqqoqoqqqoq83NvN3d3d3d3d3b0AgIiIiIiIiIiIiIi8vNvNjYiIiLi9270AAKiqiqqqqKqKqqq4y9vNrTgzM7O9270AAKiqiqqqqKqKqqrIy9vNrTjP87y928sAAIiIiIiIiIiIiIjIy9vNrTjP87zd3csAAKCoqoqqqqiqiqqqu9zNrTgzM7O928sAAKCoqoqqqqiqiqqqvNzNrTjP87y9270AAKCIiIiIiIiIiIiIvNzNrTjP87y92wsAAACqqKqKqqqoqoqqutzNrTgzM7PdvQAAAACqqKqKqqqoqoqqytzLi4iIiLi7DAAAAADAu8u7y7vLu8u7y9y8u7u7u7vLAAAAAADAvMu8y7zLvMu8y9y7u7u7u8sMAAAAAADQ293b3dvd293b3by7u7u7y8wAAAA=",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Haus"
     },
-    "myImages.t^A7gl@BN$pH{!`F-ZH)": {
-        "id": "myImages.t^A7gl@BN$pH{!`F-ZH)",
+    "t^A7gl@BN$pH{!`F-ZH)": {
         "data": "hwQQABAAAAAAAODuDAAAAAAALiLCAAAAAOBC4i4MAAAA4CXi7uIAAADgJCLiwgAAAOAiIuLCAAAAyC4iIu4AAABoLCLizswAAGjI7C4i4gxghwDgQiLuzmCHAOAlIu7CdggA4CQi4sJ2iGbIIiLiwnZ2d2YsIu7CdoiIiMgiIgyGCAAAAO7MAA==",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Farm"
     },
-    "myImages.w8?ObU+m#opK:+0*{Z;g": {
-        "id": "myImages.w8?ObU+m#opK:+0*{Z;g",
+    "w8?ObU+m#opK:+0*{Z;g": {
         "data": "hwQQABAAAAAAALC7CwAAAAAAsB2xALsAAACwERHM3bsAAMARERsRsQCw3B3RHRGxABsRzdzdEb2wERHLvNvdDNARwQzAEbEM293NDLARsQvAHRHMuxvduwAcEdsR2xG9ALDR3RHdEbEAABwRvdsRsQAAHBHNvB29AACwEcwAu7sAALC7AAAAAA==",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Schnee1"
     },
-    "myImages.;Lg,(C$I(4E0oqQ-MB,:": {
-        "id": "myImages.;Lg,(C$I(4E0oqQ-MB,:",
+    ";Lg,(C$I(4E0oqQ-MB,:": {
         "data": "hwQYABAAAAAAAAAAwMwAAAAAALDb3cwAAAAAG9HdywAAALAREb27DAAAsBHR3b0MAACwER0R3QwAu9sRERHRzbAbEREREdHNsBERERER0c0bERERERHdyxsRERER0b3LGxERERER3csbERERERHdzbAREREREdHNsNsRERER0c0A290RERHdzQDbERER0d3NABsRERHR2wwAGxERERG9DACwEdEREc0AAAC7GxERzQAAAAAbEdEMAAAAALARzQwAAAAAAMsMAAA=",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Schneewolke1"
     },
-    "myImages.#": {
-        "id": "myImages.#",
+    "#": {
         "data": "hwQYABAAAAAAAAAAwMwAAAAAALDb3cwAAAAAG9HdywAAALAREb27DAAAsBHR3b0MAACwER0R3QwAu9sRERHRzbAbEREREdHNsBERERER0c0bERERERHdyxsRERER0b3LGxERERER3csbERERERHdzbAREREREdHNsNsRERER0c0A290RERHdzQDbERER0d3NABsRERHR2wwAGxERERG9DACwEdEREc0AAAC7GxERzQAAAAAbEdEMAAAAALARzQwAAAAAAMsMAAA=",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Schneewolke2"
     },
-    "myImages.~mkxq*|h8j[5-e^S?{n{": {
-        "id": "myImages.~mkxq*|h8j[5-e^S?{n{",
+    "~mkxq*|h8j[5-e^S?{n{": {
         "data": "hwQQABAAAAAAALC7CwAAAAAAsB2xALsAAACwERHM3bsAAMARERsRsQCw3B3RHRGxABsRzdzdEb2wERHLvNvdDNARwQzAEbEM293NDLARsQvAHRHMuxvduwAcEdsR2xG9ALDR3RHdEbEAABwRvdsRsQAAHBHNvB29AACwEcwAu7sAALC7AAAAAA==",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Schnee2"
     },
-    "myImages.YK%V^=TF]7n2?GZV8#7p": {
-        "id": "myImages.YK%V^=TF]7n2?GZV8#7p",
+    "YK%V^=TF]7n2?GZV8#7p": {
         "data": "hwQQABAAAAAAALC7CwAAAAAAsB2xALsAAACwERHM3bsAAMARERsRsQCw3B3RHRGxABsRzdzdEb2wERHLvNvdDNARwQzAEbEM293NDLARsQvAHRHMuxvduwAcEdsR2xG9ALDR3RHdEbEAABwRvdsRsQAAHBHNvB29AACwEcwAu7sAALC7AAAAAA==",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Schnee3"
     },
-    "myImages.|y=K`8": {
-        "id": "myImages.|y=K`8",
+    "|y=K`8": {
         "data": "hwQYABAAAAAAAAAAwMwAAAAAALDb3cwAAAAAG9HdywAAALAREb27DAAAsBHR3b0MAACwER0R3QwAu9sRERHRzbAbEREREdHNsBERERER0c0bERERERHdyxsRERER0b3LGxERERER3csbERERERHdzbAREREREdHNsNsRERER0c0A290RERHdzQDbERER0d3NABsRERHR2wwAGxERERG9DACwEdEREc0AAAC7GxERzQAAAAAbEdEMAAAAALARzQwAAAAAAMsMAAA=",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Schneewolke3"
     },
-    "myImages.V$F|W_v#|KJ~iE57Sy": {
-        "id": "myImages.V$F|W_v#|KJ~iE57Sy",
+    "V$F|W_v#|KJ~iE57Sy": {
         "data": "hwQwADAAAAAAAABARkRGREZERkRGRGxmZmZmxswAAAAAAADAbMZsxmzGbMZsxkxmZmZmZsYMAAAAAADAZsZmxmbGZsZmxkxsZmZmZmbGAAAAAAAiLiLiIiIuIuIiwkzL5u7u7m5mDAAAAAAiLiLiIiIuIuIiYkzEJN7d3W1EZAAAACDu7u7u7u7u7u7ubEzEJN7P/WzkTgYAACAuIuIiIi4i4iIibEzEJN7P/WzkTmQAACAuIuIiIi4i4iIiZkzEJN7d3W3kTs4AAO7u7u7u7u7u7u7OxkbEJN7P/WxERM4AAC4i4iIiLiLiIiLOxkbEJN7P/WzkTs4AAC4i4iIiLiLiIiJuxkbEJN7d3W3kTmQA4O7u7u7u7u7u7u5sbEbE5O7u7m7kTmQAICLiIiIuIuIiIuJsTEbERERERERERGQAICLiIiIuIuIiIuJmTGbMzMzMzMzMzMwA4u7u7u7u7u7u7s5mRsbbEWFmZmZmZmYAIuIiIi4iIi4iIs7GtEwUYWZmZmZmZmYAIuIiIi4iIi4iIm7GxEth5v7/7+7+/+8g7u7u7u7u7u7u7mxmxERhTkREREREREQg4iIi4iIi4iIi4mxMZERh7u7u7u7u7u4g4iIi4iIi4iIi4mZMZERhTkT/TkRERETu7u7u7u7u7u7uzmZGZERhTuT/TkRERETiIiIuIuIiIi4izsZEZERh7v7/7u7u7u7u7u7u7u7u7u7ubsZEZERhTvT/TkREREQiIiIiIiIiIiIiYsZEZERhTvT/TkREREQiIiIiIiIiIiIiYsZEZERh7v7/7u7u7u7u7u7u7u7u7u7ubsZEZERhTvT/TkREREQiLiIuIuIiIi4izsZEZERhTvT/TkRERETu7u7u7u7u7u7uzmZGZERh7u7/7v7/7u4g4iIi4iIi4iIi4mZMZERhTkT/TuRPT0Qg4iIi4iIi4iIi4mxMZERhTkTkTuRPT0Qg7u7u7u7u7u7u7mxmxERh7u7u7u7/7u4AIuIiIi4iIi4iIm7GxEth5u7u7u7u7u4AIuIiIi4iIi4iIs7GtEwUYWZmZmZmZmYA4u7u7u7u7u7u7s5mRsbbEWFmZmZmZmYAICLiIiIuIuIiIuJmTGbMzMzMzMzMzMwAICLiIiIuIuIiIuJsTEbERERERERERGQA4O7u7u7u7u7u7u5sbEbE5O7u7m7kTmQAAC4i4iIiLiLiIiJuxkbEJN7d3W3kTmQAAC4i4iIiLiLiIiLOxkbEJN7P/WzkTs4AAO7u7u7u7u7u7u7OxkbEJN7P/WxERM4AACAuIuIiIi4i4iIiZkzEJN7d3W3kTs4AACAuIuIiIi4i4iIibEzEJN7P/WzkTmQAACDu7u7u7u7u7u7ubEzEJN7P/WzkTgYAAAAiLiLiIiIuIuIiYkzEJN7d3W1EZAAAAAAiLiLiIiIuIuIiwkzL5u7u7m5mDAAAAADAZsZmxmbGZsZmxkxsZmZmZmbGAAAAAADAbMZsxmzGbMZsxkxmZmZmZsYMAAAAAABARkRGREZERkRGRGxmZmZmxswAAAA=",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Holzfällerhütte"
     },
-    "myImages.image1": {
-        "id": "myImages.image1",
+    "image1": {
         "data": "hwQwADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg///v///+/+//j0hEJCIiIkJEBAAAAADg///v///+/+///0hEJCIiIkJEBAAAAADu7u7u7u7u7u7u+EhEJCIiIkJEBAAAAAD+/+////7/7///+EhEJCIiIkJEBAAAAAD+/+////7/7////0hEJCIiIkJEBAAAAO7u7u7u7u7u7u6Oj0REJCIiIkJEBAAAAP7/7////v/v//+Oj0REJCIiIkJEBAAAAP7/7////v/v///+j0REJCIiIkJEBAAA7u7u7u7u7u7u7u74SEREJCIiIkJEBAAA/v/v///+/+///+/4SEREREREREREBAAA/v/v///+/+///+//SEREREREREREBADg7u7u7u7u7u7u7o7/T0REVVVVVVVVBQDg/+////7///7//46PRURU9f//////DwDg/+////7///7///6PRURV9f//////DwDg7u7u7u7u7u7u7vj/RURVj4iIiIiICAD+7///7///7///7/hYRURV////////DwD+7///7///7///7/9YRURVj4iIiIiICADu7u7u7u7u7u7ujv9fRURVj4iIiIiICADv///+/+////7/jo9VRURV////////DwDu7u7u7u7u7u7u/o9VRURVj4iIiIiICAD//////////////49VRURVj4iIiIiICAD//////////////49VRURV////////DwDu7u7u7u7u7u7u/o9VRURVj4iIiIiICAD//v/+/+////7/jo9VRURVj4iIiIiICADu7u7u7u7u7u7ujv9fRURV////////DwD+7///7///7///7/9YRURVj4iIiIiICAD+7///7///7///7/hYRURVj4iIiIiICADu7u7u7u7u7u7u7vj/RURV////////DwDg/+////7///7///6PRURV9f//////DwDg/+////7///7//46PRURU9f//////DwDg7u7u7u7u7u7u7o7/T0REVVVVVVVVBQAA/v/v///+/+///+//SEREREREREREBAAA/v/v///+/+///+/4SEREREREREREBAAA4O7u7u7u7u7u7u74SEREJCIiIiJEBAAAAP7/7////v/v///+j0REJCIiIiJEBAAAAP7/7////v/v//+Oj0REJCIiIiJEBAAAAO7u7u7u7u7u7u6Oj0REJCIiIiJEBAAAAAD+/+////7/7////0hEJCIiIiJEBAAAAAD+/+////7/7///+EhEJCIiIiJEBAAAAADu7u7u7u7u7u7u+EhEJCIiIiJEBAAAAAAA/v/v///+/+///0hEJCIiIiJEBAAAAAAA/v/v///+/+//j0hEJCIiIiJEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Militärlager"
     },
-    "myImages.V]nVS[uUB(^Bc#;+H0+G": {
-        "id": "myImages.V]nVS[uUB(^Bc#;+H0+G",
-        "data": "hwQyADIAAAAAAAAAAADAzAAAAAAAAMxsdsZ3x3dmDAAAAAAAAAAAAMDMbMcMAAAAAMDGZnbHdsZ2Z8wADgAAAAAAYMxsZ3x3xgAAAABsZ2x2d3ZndnfG4A4AAAAAAMxnfHdnd8cMAAAAXHd2dmd2d3ZnzO7uAAAAAMxsdsZ3x3dmDAAAAHZ1dndndmd2Zsbu7gAAAMDGZnbHdsZ2Z8wADgBmZ3Z2d3ZmdmfG4A4AAABsZ2x2d3ZndnfG4A4AwGbHdmd3Z3Z3zAAOAAAAXHd2dmd2d3ZnzO7uAABszHdmd2d3ZwwAAAAAAHZ1dndndmd2Zsbu7gAAAGxnfHdmd2YMAAAAAABmZ3Z2d3ZmdmfG4A4AAADMxmxndnfHAAAAAAAAwGbHdmd3Z3Z3zAAOAMzMdszAbHZnDAAAAAAAAABszHdmd2d3ZwwAxsx2xndnDABmxgAAAAAAAAAAAGxnfHdmd2YMwHzGd3d2d8wAAAAAAAAAAAAAAADAxmxndnfHwMxmZ3x3fGfGAAAAAAAAAAAAAAAAAADAbHZnDGxsZndsZ2x3xgzgAAAAAAAAAAAAAAAAAABmxsB2xmZ3Z3dmd2cM7gAAAAAAAAAAAAAAAAAAAADAdWdnd2Z3Z3fG7O7OzAAAAAAAAAAAAAAAAAAAYFdnd3dmd2ZnZszMbMcMAAAAAAAAAAAAAAAAAGB2Zmd3Z2dmZ8xsZ3x3xgAAAAAAAAAAAAAAAAAAbHZsd3Z3ZsxnfHdnd8cMAAAAAAAAAAAAAAAAAMDGfGd2d8xsdsZ3x3dmDAAAAAAAAAAAAAAAAAAAwHbGd8fGZnbHdsZ2Z8wAAAAAAAAAAAAAAAAAAABszHZsZ2x2d3ZndnfG4AAAAAAAAAAAAAAAAAAAAADMXHd2dmd2d3ZnzO4AAAAAAAAAAAAAAAAAAAAAAHZ1dndndmd2ZsbuAAAAAAAAAAAAAAAAAAAAAABmZ3Z2d3ZmdmfG4AAAAAAAAAAAAAAAAAAAAAAAwGbHdmd3Z3Z3zAAAAAAAAAAAAAAAAAAAAABgzGxszHdmd2d3ZwwAAAAAAAAAAAAAAAAAAAAAzGd8d2xnfHdmd2YMAAAAAAAAAAAAAAAAAAAAzGx2xnfHxmxndnfHAAAAAAAAAAAAAAAAAAAAwMZmdsd2xnbHbHZnDAAAAAAAAAAAAAAAAAAAAGxnbHZ3dmd2d8ZmxgAAAAAAAAAAAAAAAAAAAABcd3Z2Z3Z3dmfM7u4AAAAAAAAAAAAAAAAAAAAAdnV2d2d2Z3Zmxu7uAAAAAAAAAAAAAAAAwMwAAGZndnZ3dmZ2Z8bMDgAAAAAAAAAAAADAzGzHDADAZsd2Z3dnxsxsxwwAAAAAAAAAAGDMbGd8d8YAAGzMd2ZnzGxnfHfGAAAAAAAAAADMZ3x3Z3fHDAAAbGd8zGd8d2d3xwwAAAAAAADMbHbGd8d3ZgwAAMDGzGx2xnfHd2YMAAAAAADAxmZ2x3bGdmfMAA4AwMZmdsd2xnZnzAAOAAAAbGdsdnd2Z3Z3xuAOAGxnbHZ3dmd2d8bgDgAAAFx3dnZndnd2Z8zu7gBcd3Z2Z3Z3dmfM7u4AAAB2dXZ3Z3ZndmbG7u4AdnV2d2d2Z3Zmxu7uAAAAZmd2dnd2ZnZnxuAOAGZndnZ3dmZ2Z8bgDgAAAMBmx3Znd2d2d8wADgDAZsd2Z3dndnfMAA4AAAAAbMx3Zndnd2cMAAAAAGzMd2Z3Z3dnDAAAAAAAAABsZ3x3ZndmDAAAAAAAbGd8d2Z3ZgwAAAAAAAAAwMZsZ3Z3xwAAAAAAAMDGbGd2d8cAAAAAAAAAAAAAwGx2ZwwAAAAAAAAAAMBsdmcMAAAAAAAAAAAAAAAAZsYAAAAAAAAAAAAAAGbGAAAAAAAAAA==",
-        "dataEncoding": "base64",
-        "namespace": "myImages.",
+    "V]nVS[uUB(^Bc#;+H0+G": {
+        "data": "hwQkACkAAAAAAAAAAAAAAAAAgIYAAAAAAAAAAAAAAAAAAAAAAAAAAAAIgIaIBgAAAAAAAAAAAAAAAAAAAAAAAICGaIZmhgAAAAAAAAAAAAAAAAAAAAAAAICGZmhmiIgAAAAAAAAAAAAAAAAAAABgAGZmZ2aGaGYIAAAAAAAAAAAAAAAAAAB2CGh2Z2aIZoYIAAAAAAAAAAAAAAAAAIB3hmh2ZmZoZoiICAAAAAAAAAAAAAAAAIZndmdmdmZmhmhmCAAAAAAAAAAAAGAAYGdmd2dmd2dmZmaGiAAAAAAAAAAAAHYGaGdmd2Znd2ZmZmaIhgAAAAAAAAAAAHiHdmZnZ3ZnZmZmZoZohgAAAAAAAABgCGhndnZnZndnZnZmZmZmhgAAAAAAAABghnZmZnZnZndmZndnZmZmiAAAAAAAAACAZnZmZnZmZmZ2ZndmZmaIiAAAAAAAAACAhndmZmd2Z3Z3dmZmZmZmhg4AAAAAAACAeHd3ZmZ3Z3d3ZnZ3ZmZmZujM/w8AAABod3dnZnZ3ZndmZnd3ZmZmiOjuzg8AAAB2d3dmZmZmZnZ3ZmZmZmaGiO7u7gwAAACAdnd3Zndndnd3ZndnZmZmhuj/7w4AAACAaHdmZnd3d3dnZndndndmhgjA7A4AAABgeHZ2ZnZ3dnd3ZmZmdmdmhgDszgwAAAAAeIZ2Z2Z3Znd3dmdmZmZmyO7OAAAAAAAAZmhoZ2Zmd3dmdndmZmaG6AwAAAAAAAAAiGiGZ2dmd3dmZmZ2d2dmiAAAAAAAAAAAAGCIeGdmd3dmZ2Zmd2dmZggAAAAAAAAAAAAAYIdnd2dmd2ZmdmdmhgAAAAAAAAAAAAAAAIZ2dmdmd2d3ZmaGCAAAAAAAAAAAAAAAAAB4Z2d3dmd3ZmZmCAAAAAAAAAAAAAAAAABgZ2Z3ZmZ2ZmaGCAAAAAAAAAAAAAAAAAAAhmd2ZnZmZoYIAAAAAAAAAAAAAAAAAAAAgHdmZnZmZoYAAAAAAAAAAAAAAAAAAAAAAHZmZmZmZoYAAAAAAAAAAAAAAAAAAAAAAIBohmZmiAgAAAAAAAAAAAAAAAAAAAAAAACACGhmCAAAAAAAAAAAAAAAAAAAAAAAAAAAAICGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA=",
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Wald_bild"
+    },
+    "image2": {
+        "data": "hwQYABgAAAAAAAAAAP//AAAAAAAAAADw/73LDwAAAAAA8P//7///DwAAAAAA/+/v7v4EAAAAAADw/y7/T+7//wAAAADw7/K/2+0i9A8AAAD/4vL+300i9A8AAAAv4vJO1E0i9QAAAAAv4vJO1E0i9QAAAAD/4vL+300i9A8AAADw7/K/2+Qi9A8AAADw/y7/T+7//wAAAAAA/+7v7k5BAAAAAAAA8P//7/9OAAAAAAAAAADw/9/tAAAAAAAAAAAAAN7tAAAAAAAAAAAAwMwOAAAAAAAAAAAAwM0AAAAAAAAAAAAA3M0AAAAAAAAAAADA3QwAAAAAAAAAAADczQAAAAAAAAAAAADcDAAAAAAAAAAAAADMAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Soldat_BILD"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
     }
 }
