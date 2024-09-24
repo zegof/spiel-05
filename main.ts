@@ -19,7 +19,7 @@ namespace StatusBarKind {
     export const Food = StatusBarKind.create()
     export const SoldatHealth = StatusBarKind.create()
 }
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+controller.A.onEvent(ControllerButtonEvent.Released, function () {
     for (let value of sprites.allOfKind(SpriteKind.Kisten)) {
         if (player1.overlapsWith(value)) {
             sprites.destroy(value)
@@ -36,12 +36,33 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
                         Militärlager2 = sprites.create(assets.image`Militärlager`, SpriteKind.Militärlager)
                         scaling.scaleToPercent(Militärlager2, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
                         Militärlager2.setPosition(player1.x, player1.y)
+                    } else {
+                        game.showLongText("Militärlager erfordert 180 Holz", DialogLayout.Bottom)
                     }
                 }
             } else {
                 game.showLongText("Es können nur 3 Militärlager gebaut werden.", DialogLayout.Bottom)
                 game.showLongText("Militärlager erfordert 180 Holz.", DialogLayout.Bottom)
             }
+        }
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Militärlager, function (sprite, otherSprite) {
+    if (controller.B.isPressed()) {
+        if (sprites.allOfKind(SpriteKind.Soldaten).length < 3) {
+            if (goldScore >= 3) {
+                goldScore += -3
+                Soldat = sprites.create(assets.image`Soldat_BILD`, SpriteKind.Soldaten)
+                Soldat.setPosition(player1.x, player1.y)
+                Soldat.follow(Affe2, 75)
+                Soldat.setFlag(SpriteFlag.GhostThroughWalls, true)
+                statusbar = statusbars.create(20, 2, StatusBarKind.Health)
+                statusbar.attachToSprite(Soldat, 0, -4)
+            } else {
+                game.showLongText("Soldat erfordert 3 Gold.", DialogLayout.Bottom)
+            }
+        } else {
+            game.showLongText("Es können nur 3 Soldaten pro Militärlager gebaut werden.", DialogLayout.Bottom)
         }
     }
 })
@@ -99,23 +120,6 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
             }
         }
     }
-    if (player1.overlapsWith(Militärlager2) && true) {
-        if (sprites.allOfKind(SpriteKind.Soldaten).length < 3) {
-            if (goldScore >= 3) {
-                goldScore += -3
-                Soldat = sprites.create(assets.image`Soldat_BILD`, SpriteKind.Soldaten)
-                Soldat.setPosition(player1.x, player1.y)
-                Soldat.follow(Affe2, 75)
-                Soldat.setFlag(SpriteFlag.GhostThroughWalls, true)
-                statusbar = statusbars.create(20, 2, StatusBarKind.Health)
-                statusbar.attachToSprite(Soldat, 0, -4)
-            } else {
-                game.showLongText("Soldat erfordert 3 Gold.", DialogLayout.Bottom)
-            }
-        } else {
-            game.showLongText("Es können nur 3 Soldaten pro Militärlager gebaut werden.", DialogLayout.Bottom)
-        }
-    }
 })
 let Wolke: Sprite = null
 let Schneeflocke: Sprite = null
@@ -125,10 +129,10 @@ let AnzahlTageText = ""
 let woodScoreText = ""
 let goldScoreText = ""
 let foodScoreText = ""
-let Soldat: Sprite = null
 let Holzfällerhütte: Sprite = null
 let n = 0
 let Farm: Sprite = null
+let Soldat: Sprite = null
 let Militärlager2: Sprite = null
 let statusbar: StatusBarSprite = null
 let Affe2: Sprite = null
