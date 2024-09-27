@@ -168,6 +168,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Späherlager, function (sprite, 
         }
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`tilemap3`)
+})
 let Wolke: Sprite = null
 let Schneeflocke: Sprite = null
 let Winter = 0
