@@ -38,7 +38,7 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath4, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`tilemap3`)
+    tiles.setCurrentTilemap(tilemap`Level5`)
 })
 sprites.onOverlap(SpriteKind.Soldaten, SpriteKind.Affe, function (sprite, otherSprite) {
     statusbar.setColor(7, 2)
