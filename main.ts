@@ -12,6 +12,8 @@ namespace SpriteKind {
     export const Militärlager = SpriteKind.create()
     export const Ackerland = SpriteKind.create()
     export const Soldaten = SpriteKind.create()
+    export const Späherlager = SpriteKind.create()
+    export const Späher = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const Wood = StatusBarKind.create()
@@ -20,7 +22,7 @@ namespace StatusBarKind {
     export const SoldatHealth = StatusBarKind.create()
 }
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    if (player1.tileKindAt(TileDirection.Left, sprites.castle.tilePath5)) {
+    if (player1.tileKindAt(TileDirection.Center, sprites.castle.tilePath5)) {
         if (sprites.allOfKind(SpriteKind.Militärlager).length < 3) {
             if (woodScore >= 180) {
                 woodScore += -180
@@ -50,7 +52,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Militärlager, function (sprite,
         if (sprites.allOfKind(SpriteKind.Soldaten).length < 3) {
             if (goldScore >= 3) {
                 goldScore += -3
-                Soldat = sprites.create(assets.image`Soldat_BILD`, SpriteKind.Soldaten)
+                Soldat = sprites.create(assets.image`SoldatBILD`, SpriteKind.Soldaten)
                 Soldat.setPosition(player1.x, player1.y)
                 Soldat.follow(Affe2, 75)
                 Soldat.setFlag(SpriteFlag.GhostThroughWalls, true)
@@ -60,7 +62,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Militärlager, function (sprite,
                 game.showLongText("Soldat erfordert 3 Gold.", DialogLayout.Bottom)
             }
         } else {
-            game.showLongText("Es können nur 3 Soldaten pro Militärlager gebaut werden.", DialogLayout.Bottom)
+            game.showLongText("Es können nur 3 Soldaten pro Militärlager angeheuert werden.", DialogLayout.Bottom)
         }
     }
 })
@@ -125,6 +127,21 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
             }
         }
     }
+    if (player1.tileKindAt(TileDirection.Center, sprites.castle.tilePath5)) {
+        if (sprites.allOfKind(SpriteKind.Militärlager).length < 3) {
+            if (woodScore >= 30) {
+                woodScore += -30
+                goldScore += -1
+                Späherlager_1 = sprites.create(assets.image`SpäherlagerBILD`, SpriteKind.Späherlager)
+                Späherlager_1.setPosition(player1.x, player1.y)
+                scaling.scaleToPercent(Späherlager_1, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
+            } else {
+                game.showLongText("Es kann nur 1 Späherlager gebaut werden", DialogLayout.Bottom)
+            }
+        } else {
+            game.showLongText("Späherlager erfordert 30 Holz ", DialogLayout.Bottom)
+        }
+    }
 })
 sprites.onOverlap(SpriteKind.Affe, SpriteKind.Farmen, function (sprite, otherSprite) {
     foodScore += -10
@@ -132,6 +149,23 @@ sprites.onOverlap(SpriteKind.Affe, SpriteKind.Farmen, function (sprite, otherSpr
         Affe2.setPosition(600, 120)
     } else {
         Affe2.follow(Farm, 15)
+    }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Späherlager, function (sprite, otherSprite) {
+    if (controller.A.isPressed()) {
+        if (sprites.allOfKind(SpriteKind.Späher).length <= 1) {
+            if (goldScore >= 2) {
+                goldScore += -2
+                Späher1 = sprites.create(assets.image`SpäherBILD`, SpriteKind.Späher)
+                Späher1.setPosition(player1.x, player1.y)
+                Späher1.setFlag(SpriteFlag.GhostThroughWalls, true)
+                Späher1.setVelocity(randint(-10, 20), randint(-10, 10))
+            } else {
+                game.showLongText("Späher kostet 2 Gold", DialogLayout.Bottom)
+            }
+        } else {
+            game.showLongText("Es kann nur 1 Späher angeheuert werden", DialogLayout.Bottom)
+        }
     }
 })
 let Wolke: Sprite = null
@@ -142,6 +176,8 @@ let AnzahlTageText = ""
 let woodScoreText = ""
 let goldScoreText = ""
 let foodScoreText = ""
+let Späher1: Sprite = null
+let Späherlager_1: Sprite = null
 let Holzfällerhütte: Sprite = null
 let Farm: Sprite = null
 let n = 0
@@ -159,7 +195,7 @@ let SchadenAffen = -4
 let SchadenSoldaten = -10
 let foodScore = 100
 goldScore = 100
-woodScore = 200
+woodScore = 34
 let AnzahlTage = 61
 let AnzahlJahre = 1
 let statusbar_food = statusbars.create(30, 0, StatusBarKind.Energy)
