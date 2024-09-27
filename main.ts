@@ -20,31 +20,29 @@ namespace StatusBarKind {
     export const SoldatHealth = StatusBarKind.create()
 }
 controller.A.onEvent(ControllerButtonEvent.Released, function () {
-    for (let value of sprites.allOfKind(SpriteKind.Kisten)) {
-        if (player1.overlapsWith(value)) {
-            sprites.destroy(value)
-            foodScore += 20
-            goldScore += 20
-            woodScore += 20
-            game.showLongText("Du findest jeweils 20 Essen, Holz und Gold!", DialogLayout.Bottom)
-        }
-        if (player1.tileKindAt(TileDirection.Left, sprites.castle.tilePath5)) {
-            if (sprites.allOfKind(SpriteKind.Militärlager).length < 3) {
-                for (let index = 0; index < 1; index++) {
-                    if (woodScore >= 180) {
-                        woodScore += -180
-                        Militärlager2 = sprites.create(assets.image`Militärlager`, SpriteKind.Militärlager)
-                        scaling.scaleToPercent(Militärlager2, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
-                        Militärlager2.setPosition(player1.x, player1.y)
-                    } else {
-                        game.showLongText("Militärlager erfordert 180 Holz", DialogLayout.Bottom)
-                    }
-                }
+    if (player1.tileKindAt(TileDirection.Left, sprites.castle.tilePath5)) {
+        if (sprites.allOfKind(SpriteKind.Militärlager).length < 3) {
+            if (woodScore >= 180) {
+                woodScore += -180
+                Militärlager2 = sprites.create(assets.image`Militärlager`, SpriteKind.Militärlager)
+                scaling.scaleToPercent(Militärlager2, 80, ScaleDirection.Uniformly, ScaleAnchor.Middle)
+                Militärlager2.setPosition(player1.x, player1.y)
             } else {
-                game.showLongText("Es können nur 3 Militärlager gebaut werden.", DialogLayout.Bottom)
-                game.showLongText("Militärlager erfordert 180 Holz.", DialogLayout.Bottom)
+                game.showLongText("Militärlager erfordert 180 Holz", DialogLayout.Bottom)
             }
+        } else {
+            game.showLongText("Es können nur 3 Militärlager gebaut werden.", DialogLayout.Bottom)
         }
+    }
+})
+sprites.onOverlap(SpriteKind.Soldaten, SpriteKind.Affe, function (sprite, otherSprite) {
+    statusbar.setColor(7, 2)
+    statusbars.getStatusBarAttachedTo(StatusBarKind.Health, sprite).value += -3
+    statusbars.getStatusBarAttachedTo(StatusBarKind.Health, otherSprite).value += -1
+})
+statusbars.onDisplayUpdated(StatusBarKind.Health, function (status, image2) {
+    if (status.kind() == 0) {
+        SchadenAffen += -1
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Militärlager, function (sprite, otherSprite) {
@@ -66,15 +64,22 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Militärlager, function (sprite,
         }
     }
 })
-sprites.onOverlap(SpriteKind.Affe, SpriteKind.Farmen, function (sprite, otherSprite) {
-    foodScore += -10
-    if (true) {
-        Affe2.setPosition(600, 120)
-    } else {
-        Affe2.follow(Farm, 15)
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Kisten, function (sprite, otherSprite) {
+    if (controller.A.isPressed()) {
+        sprites.destroy(otherSprite)
+        foodScore += 20
+        goldScore += 20
+        woodScore += 20
+        game.showLongText("Du findest jeweils 20 Essen, Holz und Gold!", DialogLayout.Bottom)
     }
 })
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+statusbars.onZero(StatusBarKind.Health, function (status) {
+    sprites.destroy(status.spriteAttachedTo(), effects.ashes, 1000)
+    Soldat.follow(Militärlager2, 10)
+    Soldat.follow(Militärlager2, 10)
+    Soldat.follow(Militärlager2, 10)
+})
+controller.B.onEvent(ControllerButtonEvent.Released, function () {
     if (player1.tileKindAt(TileDirection.Center, sprites.castle.tileGrass3)) {
         n = 0
         for (let value3 of sprites.allOfKind(SpriteKind.Farmen)) {
@@ -121,6 +126,14 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
+sprites.onOverlap(SpriteKind.Affe, SpriteKind.Farmen, function (sprite, otherSprite) {
+    foodScore += -10
+    if (true) {
+        Affe2.setPosition(600, 120)
+    } else {
+        Affe2.follow(Farm, 15)
+    }
+})
 let Wolke: Sprite = null
 let Schneeflocke: Sprite = null
 let Winter = 0
@@ -130,8 +143,8 @@ let woodScoreText = ""
 let goldScoreText = ""
 let foodScoreText = ""
 let Holzfällerhütte: Sprite = null
-let n = 0
 let Farm: Sprite = null
+let n = 0
 let Soldat: Sprite = null
 let Militärlager2: Sprite = null
 let statusbar: StatusBarSprite = null
@@ -142,6 +155,8 @@ let player1: Sprite = null
 let woodScore = 0
 let goldScore = 0
 tiles.setCurrentTilemap(tilemap`level01`)
+let SchadenAffen = -4
+let SchadenSoldaten = -10
 let foodScore = 100
 goldScore = 100
 woodScore = 200
