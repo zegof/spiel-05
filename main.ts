@@ -37,6 +37,9 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
         }
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath4, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`tilemap3`)
+})
 sprites.onOverlap(SpriteKind.Soldaten, SpriteKind.Affe, function (sprite, otherSprite) {
     statusbar.setColor(7, 2)
     statusbars.getStatusBarAttachedTo(StatusBarKind.Health, sprite).value += -3
@@ -167,9 +170,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Späherlager, function (sprite, 
             game.showLongText("Es kann nur 1 Späher angeheuert werden", DialogLayout.Bottom)
         }
     }
-})
-scene.onOverlapTile(SpriteKind.Player, assets.tile`transparency16`, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`tilemap3`)
 })
 let Wolke: Sprite = null
 let Schneeflocke: Sprite = null
