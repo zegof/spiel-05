@@ -37,9 +37,6 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
         }
     }
 })
-scene.onOverlapTile(SpriteKind.Player, sprites.castle.tilePath4, function (sprite, location) {
-    tiles.setCurrentTilemap(tilemap`Level5`)
-})
 sprites.onOverlap(SpriteKind.Soldaten, SpriteKind.Affe, function (sprite, otherSprite) {
     statusbar.setColor(7, 2)
     statusbars.getStatusBarAttachedTo(StatusBarKind.Health, sprite).value += -3
@@ -68,6 +65,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Militärlager, function (sprite,
             game.showLongText("Es können nur 3 Soldaten pro Militärlager angeheuert werden.", DialogLayout.Bottom)
         }
     }
+})
+scene.onOverlapTile(SpriteKind.Späher, sprites.castle.tilePath5, function (sprite, location) {
+    tiles.setCurrentTilemap(tilemap`level0`)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Kisten, function (sprite, otherSprite) {
     if (controller.A.isPressed()) {
