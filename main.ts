@@ -14,6 +14,8 @@ namespace SpriteKind {
     export const Soldaten = SpriteKind.create()
     export const Späherlager = SpriteKind.create()
     export const Späher = SpriteKind.create()
+    export const Goldmine = SpriteKind.create()
+    export const Wolf1 = SpriteKind.create()
 }
 namespace StatusBarKind {
     export const Wood = StatusBarKind.create()
@@ -108,7 +110,7 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
             }
         }
     }
-    if (player1.tileKindAt(TileDirection.Center, sprites.builtin.forestTiles23)) {
+    if (player1.tileKindAt(TileDirection.Center, assets.tile`myTile12`)) {
         n = 0
         for (let value2 of sprites.allOfKind(SpriteKind.Holzfällerhütten)) {
             if (player1.overlapsWith(value2)) {
@@ -143,6 +145,28 @@ controller.B.onEvent(ControllerButtonEvent.Released, function () {
             }
         } else {
             game.showLongText("Späherlager erfordert 30 Holz ", DialogLayout.Bottom)
+        }
+    }
+    if (player1.tileKindAt(TileDirection.Center, assets.tile`myTile13`)) {
+        n = 0
+        for (let value2 of sprites.allOfKind(SpriteKind.Goldmine)) {
+            if (player1.overlapsWith(value2)) {
+                n += 1
+            }
+        }
+        if (n == 0) {
+            if (sprites.allOfKind(SpriteKind.Goldmine).length < 5) {
+                if (woodScore >= 60) {
+                    woodScore += -60
+                    Goldmine1 = sprites.create(assets.image`GoldfarmBILD`, SpriteKind.Goldmine)
+                    scaling.scaleToPercent(Goldmine1, 30, ScaleDirection.Uniformly, ScaleAnchor.Middle)
+                    Goldmine1.setPosition(player1.x, player1.y)
+                } else {
+                    game.showLongText("Goldmine benötigt 60 Holz ", DialogLayout.Bottom)
+                }
+            } else {
+                game.showLongText("Es können nur 5 Goldminen gebaut werden.", DialogLayout.Bottom)
+            }
         }
     }
 })
@@ -180,6 +204,7 @@ let woodScoreText = ""
 let goldScoreText = ""
 let foodScoreText = ""
 let Späher1: Sprite = null
+let Goldmine1: Sprite = null
 let Späherlager_1: Sprite = null
 let Holzfällerhütte: Sprite = null
 let Farm: Sprite = null
@@ -194,11 +219,11 @@ let player1: Sprite = null
 let woodScore = 0
 let goldScore = 0
 tiles.setCurrentTilemap(tilemap`level01`)
-let SchadenAffen = -4
-let SchadenSoldaten = -10
+let SchadenAffen = -1
+let SchadenSoldaten = -3
 let foodScore = 100
 goldScore = 100
-woodScore = 34
+woodScore = 100
 let AnzahlTage = 61
 let AnzahlJahre = 1
 let statusbar_food = statusbars.create(30, 0, StatusBarKind.Energy)
@@ -225,20 +250,26 @@ for (let index = 0; index < 1; index++) {
     Kiste = sprites.create(assets.image`Truhe1`, SpriteKind.Kisten)
     tiles.placeOnRandomTile(Kiste, sprites.castle.tilePath5)
 }
-for (let index = 0; index < 8; index++) {
+for (let index = 0; index < 20; index++) {
     Wald = sprites.create(assets.image`Wald_bild`, SpriteKind.wald)
     tiles.placeOnRandomTile(Wald, assets.tile`myTile6`)
 }
 Affe2 = sprites.create(assets.image`Affe`, SpriteKind.Affe)
 Kiste = sprites.create(assets.image`Truhe2`, SpriteKind.Kisten)
 tiles.placeOnRandomTile(Kiste, sprites.builtin.forestTiles10)
-Affe2.setPosition(600, 120)
+Affe2.setPosition(50, 500)
 Affe2.setVelocity(5, 5)
 Affe2.setFlag(SpriteFlag.GhostThroughWalls, true)
 statusbar = statusbars.create(20, 2, StatusBarKind.Health)
 statusbar.attachToSprite(Affe2, 0, -2)
 let Haus2 = sprites.create(assets.image`Haus`, SpriteKind.Haus)
-Haus2.setPosition(59, 50)
+Haus2.setPosition(50, 50)
+let Wolf = sprites.create(assets.image`WolfBILD`, SpriteKind.Wolf1)
+Wolf.setPosition(800, 800)
+Wolf.setBounceOnWall(true)
+Wolf.setVelocity(5, 5)
+let statusbar2 = statusbars.create(20, 4, StatusBarKind.Health)
+statusbar2.attachToSprite(Wolf)
 game.onUpdate(function () {
     if (goldScore >= 200) {
         game.setGameOverMessage(true, "SIEG mit 200 Gold!")
@@ -367,4 +398,6 @@ game.onUpdateInterval(1000, function () {
     goldScore += sprites.allOfKind(SpriteKind.Farmen).length * -1
     foodScore += -2 - 2 * Winter
     woodScore += -1 - Winter
+    goldScore += sprites.allOfKind(SpriteKind.Goldmine).length
+    foodScore += sprites.allOfKind(SpriteKind.Goldmine).length * -2
 })
