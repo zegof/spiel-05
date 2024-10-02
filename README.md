@@ -12,7 +12,7 @@ Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
 * klicke auf **Erweiterungen** unter dem Zahnrad-Menü
 * nach **https://github.com/zegof/spiel-05** suchen und importieren
 
-## Dieses Projekt bearbeiten [![Build status badge](https://github.com/zegof/spiel-05/actions/workflows/makecode-release.yml/badge.svg)](https://github.com/zegof/spiel-05/actions/workflows/makecode-release.yml)
+## Dieses Projekt bearbeiten [![Build status badge](https://github.com/zegof/spiel-05/actions/workflows/makecode-release.yml/badge.svg)]
 
 Um dieses Repository in MakeCode zu bearbeiten.
 
