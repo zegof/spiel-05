@@ -57,10 +57,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Militärlager, function (sprite,
                 Soldat = sprites.create(assets.image`SoldatBILD`, SpriteKind.Soldaten)
                 Soldat.setPosition(player1.x, player1.y)
                 Soldat.follow(Affe2, 75)
+            } else {
                 Soldat.setFlag(SpriteFlag.GhostThroughWalls, true)
                 statusbar = statusbars.create(20, 2, StatusBarKind.Health)
                 statusbar.attachToSprite(Soldat, 0, -4)
-            } else {
                 game.showLongText("Soldat erfordert 3 Gold.", DialogLayout.Bottom)
             }
         } else {
@@ -82,9 +82,20 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Kisten, function (sprite, otherS
 })
 statusbars.onZero(StatusBarKind.Health, function (status) {
     sprites.destroy(status.spriteAttachedTo(), effects.ashes, 1000)
-    Soldat.follow(Militärlager2, 10)
-    Soldat.follow(Militärlager2, 10)
-    Soldat.follow(Militärlager2, 10)
+    Soldat.follow(Wolf, 50)
+    Soldat.follow(Wolf, 50)
+    Soldat.follow(Wolf, 50)
+    Soldat.follow(Wolf, 50)
+    Soldat.follow(Wolf, 50)
+    Soldat.follow(Wolf, 50)
+    Soldat.follow(Wolf, 50)
+    Soldat.follow(Wolf, 50)
+    Soldat.follow(Wolf, 50)
+})
+sprites.onOverlap(SpriteKind.Soldaten, SpriteKind.Wolf1, function (sprite, otherSprite) {
+    statusbar.setColor(7, 2)
+    statusbars.getStatusBarAttachedTo(StatusBarKind.Health, sprite).value += -10
+    statusbars.getStatusBarAttachedTo(StatusBarKind.Health, otherSprite).value += -1
 })
 controller.B.onEvent(ControllerButtonEvent.Released, function () {
     if (player1.tileKindAt(TileDirection.Center, sprites.castle.tileGrass3)) {
@@ -211,6 +222,7 @@ let Farm: Sprite = null
 let n = 0
 let Soldat: Sprite = null
 let Militärlager2: Sprite = null
+let Wolf: Sprite = null
 let statusbar: StatusBarSprite = null
 let Affe2: Sprite = null
 let Wald: Sprite = null
@@ -264,7 +276,7 @@ statusbar = statusbars.create(20, 2, StatusBarKind.Health)
 statusbar.attachToSprite(Affe2, 0, -2)
 let Haus2 = sprites.create(assets.image`Haus`, SpriteKind.Haus)
 Haus2.setPosition(50, 50)
-let Wolf = sprites.create(assets.image`WolfBILD`, SpriteKind.Wolf1)
+Wolf = sprites.create(assets.image`WolfBILD`, SpriteKind.Wolf1)
 Wolf.setPosition(800, 800)
 Wolf.setBounceOnWall(true)
 Wolf.setVelocity(5, 5)
