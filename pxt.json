@@ -8,8 +8,7 @@
         "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.2.1",
         "arcade-text": "github:microsoft/arcade-text#v1.3.0",
         "sevenseg": "*",
-        "sprite-scaling": "*",
-        "Timers": "github:microsoft/arcade-timers#v1.1.0"
+        "sprite-scaling": "*"
     },
     "files": [
         "main.blocks",
