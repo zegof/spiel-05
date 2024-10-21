@@ -40,9 +40,15 @@ controller.A.onEvent(ControllerButtonEvent.Released, function () {
     }
 })
 sprites.onOverlap(SpriteKind.Soldaten, SpriteKind.Affe, function (sprite, otherSprite) {
+    animation.runImageAnimation(
+    sprite,
+    assets.animation`AnimationKäpfenderSoldat`,
+    500,
+    false
+    )
     statusbar.setColor(7, 2)
-    statusbars.getStatusBarAttachedTo(StatusBarKind.Health, sprite).value += -3
-    statusbars.getStatusBarAttachedTo(StatusBarKind.Health, otherSprite).value += -1
+    statusbars.getStatusBarAttachedTo(StatusBarKind.Health, sprite).value += -0.1
+    statusbars.getStatusBarAttachedTo(StatusBarKind.Health, otherSprite).value += -0.3
 })
 statusbars.onDisplayUpdated(StatusBarKind.Health, function (status, image2) {
     if (status.kind() == 0) {
@@ -57,10 +63,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Militärlager, function (sprite,
                 Soldat = sprites.create(assets.image`SoldatBILD`, SpriteKind.Soldaten)
                 Soldat.setPosition(player1.x, player1.y)
                 Soldat.follow(Affe2, 75)
-            } else {
                 Soldat.setFlag(SpriteFlag.GhostThroughWalls, true)
                 statusbar = statusbars.create(20, 2, StatusBarKind.Health)
                 statusbar.attachToSprite(Soldat, 0, -4)
+            } else {
                 game.showLongText("Soldat erfordert 3 Gold.", DialogLayout.Bottom)
             }
         } else {
@@ -82,15 +88,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Kisten, function (sprite, otherS
 })
 statusbars.onZero(StatusBarKind.Health, function (status) {
     sprites.destroy(status.spriteAttachedTo(), effects.ashes, 1000)
-    Soldat.follow(Wolf, 50)
-    Soldat.follow(Wolf, 50)
-    Soldat.follow(Wolf, 50)
-    Soldat.follow(Wolf, 50)
-    Soldat.follow(Wolf, 50)
-    Soldat.follow(Wolf, 50)
-    Soldat.follow(Wolf, 50)
-    Soldat.follow(Wolf, 50)
-    Soldat.follow(Wolf, 50)
+    status.spriteAttachedTo().follow(Wolf, 50)
 })
 sprites.onOverlap(SpriteKind.Soldaten, SpriteKind.Wolf1, function (sprite, otherSprite) {
     statusbar.setColor(7, 2)
@@ -235,7 +233,7 @@ let SchadenAffen = -1
 let SchadenSoldaten = -3
 let foodScore = 100
 goldScore = 100
-woodScore = 100
+woodScore = 300
 let AnzahlTage = 61
 let AnzahlJahre = 1
 let statusbar_food = statusbars.create(30, 0, StatusBarKind.Energy)
